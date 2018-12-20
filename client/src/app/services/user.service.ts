@@ -1,25 +1,32 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { User } from '../models/auth';
+import { Auth } from '../models/auth';
+
+const httpOptions = {
+    headers: new HttpHeaders ({
+        'Content-Type' : 'application/json',
+        'Authorization': sessionStorage.getItem('currentUser')
+    })
+}
 
 @Injectable()
 export class UserService {
     constructor(private http: HttpClient) { }
 
     getAll() {
-        return this.http.get<User[]>(`https://cosmoknot-server2.herokuapp.com/user/getall`);
+        return this.http.get<Auth[]>(`https://cosmoknot-server2.herokuapp.com/user/getall`);
     }
 
     getById(id: number) {
         return this.http.get(`https://cosmoknot-server2.herokuapp.com/users/` + id);
     }
 
-    register(user: User) {
+    register(user: Auth) {
         return this.http.post(`https://cosmoknot-server2.herokuapp.com/users/register`, user);
     }
 
-    update(user: User) {
+    update(user: Auth) {
         return this.http.put(`https://cosmoknot-server2.herokuapp.com/user/` + user.id, user);
     }
 

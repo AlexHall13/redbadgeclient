@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { EntryService } from '../../services/entry.service';
+import { EntryService } from '../services/entry.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Entry } from '../models/entry'; 
 
