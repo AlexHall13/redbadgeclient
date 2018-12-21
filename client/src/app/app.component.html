@@ -1,17 +1,2 @@
-<body>
 
-  <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-<div class="navbar-nav">
-  <a class="nav-item nav-link" routerLink="/">Home</a>
-  <!--<a class="nav-item nav-link" routerLink="/admin" *ngIf="!auth.loggedIn">Admin</a>-->
-  <a class="nav-item nav-link" (click)="logout()">Logout</a>
-</div>
-</nav>
-<!-- main app container -->
-<nav>
-<a routerLink="/home">Home</a>&nbsp;
-<a routerLink="/login">User Login</a>&nbsp;
-<a routerLink="/signup">Register</a>&nbsp;
-</nav>
 <router-outlet></router-outlet>
