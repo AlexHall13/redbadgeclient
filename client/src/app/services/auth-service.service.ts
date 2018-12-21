@@ -25,7 +25,7 @@ export class AuthServiceService {
   }
 
   login(username, password, isAdmin) {
-    return this.http.post<any>('https://localhost:4200/user/login', { auth: { username, password, isAdmin } })
+    return this.http.post<any>('https://cosmoknot-server2.herokuapp.com/user/login', { auth: { username, password, isAdmin } })
       .pipe(map(user => {
         if (user && user.sessionToken) {
           sessionStorage.setItem('currentUser', user.sessionToken);
@@ -47,7 +47,7 @@ export class AuthServiceService {
   }
 
   signup(username, password, isAdmin) {
-    return this.http.post<any>('https://localhost:4200/user/signup', { username, password, isAdmin })
+    return this.http.post<any>('https://cosmoknot-server2.herokuapp.com/user/signup', { username, password, isAdmin })
       .pipe(map(user => {
         if (user && user.sessionToken) {
           sessionStorage.setItem('currentUser', user.sessionToken);

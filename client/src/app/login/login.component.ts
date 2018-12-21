@@ -45,8 +45,8 @@ export class LoginComponent implements OnInit {
     }
     this.loading = true;
     this.authservice.login(this.f.username.value,
-                          this.f.password.value,
-                          this.f.isAdmin.value)
+      this.f.password.value,
+      this.f.isAdmin.value)
       .pipe(first())
       .subscribe(
         data => {
