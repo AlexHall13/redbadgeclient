@@ -1,24 +1,16 @@
-<div class="testdiv2">
-    <button class="testbutton" type="submit"></button>
-    </div>
-    <img src="https://imgur.com/vvaDzba" class=logo>
-    <div class="container">
-    
-    <div class="animate three">
-                <span>H</span><span>o</span><span>m</span><span>e</span> &nbsp;
-    </div>
-    <br>
-    <br>
-    <div class="testdiv2">
-    <button class="testbutton2" type="submit" ></button>
-    <p class="about">Journal</p>
-    </div>
-    </div>
-    
-    <!-- </div>
-    <div class="textbox"></div> -->
-    <br>
-    <br>
-    <div class="testdiv2">
-    <button class="testbutton3" type="submit" a routerLink='journal'></button>
-    </div>
+<body>
+    <header>
+      <nav>
+        <ul class="nav nav-pills nav-fill">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/signup">Signup</a>
+          </li>
+          <li class="nav-item" *ngIf="tokenVar">
+            <button mat-raised-button (click)='logout()' class="nav-link">Logout</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
